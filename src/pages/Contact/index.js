@@ -1,12 +1,17 @@
 import Navbar from '../../components/Navbar'
 
+import axios from 'axios'
+
 import { useState } from 'react'
 
 const Contact = () => {
   const [ data, setData ] = useState({})
   const submitFormData = (e) => {
     e.preventDefault()
-    console.log(data)
+    axios.post('https://webhook.site/cab6161f-7afb-4276-92c2-477efbc87819', data)
+      .then( res => {
+        alert(res.status)
+      }).catch( () => alert('Ops, algo deu errado!'))
   }
 
   return(
