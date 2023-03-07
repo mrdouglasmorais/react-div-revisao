@@ -3,6 +3,11 @@ import Loader from '../../components/Loader'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
+import Footer from "../../components/Footer";
+import Card from "../../components/Card";
+
+import styles from './style.module.css'
+
 const Home = () => {
   const [ isLoad, setIsLoad ] = useState(false);
   const [ data, setData ] = useState([]);
@@ -22,18 +27,24 @@ const Home = () => {
   return(
     <div>
       <Navbar />
-      <h1>Home</h1>
-      <p>Componente: </p>
-      {data.map( (el, index) => (
-        <div key={index}>
-          <h6>{el.name}</h6>
-          <img src={el.image} alt={el.name}/>
-          <p>{el.gender}</p>
-          <p>{el.origin?.name}</p>
-          <p>Episódios {el.episode.length}</p>
+      <div className="container">
+        <h1>Home</h1>
+        <p>Componente: </p>
+        <div className={styles.content}>
+          {data.map( (el, index) => (
+            <Card 
+              key={index} 
+              name={el.name} 
+              image={el.image} 
+              gender={el.gender} 
+              origin={el.origin} 
+              episode={el.episode}
+            />
+          ))}
         </div>
-      ))}
-      <Loader load={isLoad} />
+        <Loader load={isLoad} />
+      </div>
+      <Footer />
     </div>
   )
 }
