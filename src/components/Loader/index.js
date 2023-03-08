@@ -1,8 +1,10 @@
+import RMLoader from '../../assets/gif/rick-and-morty-rick.gif'
+
 const Loader = ({load}) => {
 
   return(
     <div>
-      { load && (<h3>Carregando...</h3>)}
+      { load && (<img src={RMLoader} alt="Carregando" />)}
     </div>
   )
 }

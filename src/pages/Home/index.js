@@ -28,8 +28,6 @@ const Home = () => {
     <div>
       <Navbar />
       <div className="container">
-        <h1>Home</h1>
-        <p>Componente: </p>
         <div className={styles.content}>
           {data.map( (el, index) => (
             <Card 
