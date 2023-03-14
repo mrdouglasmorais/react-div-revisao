@@ -1,10 +1,10 @@
 import style from './style.module.css'
 
-const Footer = () => {
+const Footer = ({footerText}) => {
   return(
     <>
       <footer className={style.footerbg}>
-        <p>Direitos Resevados | Div Magalu</p>
+        <p>{footerText}</p>
       </footer>
     </>
   )

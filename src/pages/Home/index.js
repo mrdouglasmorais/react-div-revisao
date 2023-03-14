@@ -3,6 +3,8 @@ import Loader from '../../components/Loader'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
+import { mainDefault } from '../../MOCK/main'
+
 import Footer from "../../components/Footer";
 import Card from "../../components/Card";
 
@@ -26,7 +28,7 @@ const Home = () => {
 
   return(
     <div>
-      <Navbar />
+      <Navbar navItens={mainDefault} />
       <div className="container">
         <div className={styles.content}>
           {data.map( (el, index) => (
@@ -42,7 +44,7 @@ const Home = () => {
         </div>
         <Loader load={isLoad} />
       </div>
-      <Footer />
+      <Footer footerText="Todos os direitos reservados | Div Magalu" />
     </div>
   )
 }
